@@ -6,7 +6,7 @@ This is a simple example plugin that uses the plugin-interface code.
 
 Clone the project recursively to include the plugin-interface code
 
-	$ git clone --recursive https://github.com/samcrow/plugin-interface-example.git YourPluginName
+	$ git clone --recursive https://github.com/samcrow/plugin-template.git YourPluginName
 	$ cd YourPluginName
 
 Use the included script to set up the code with your plugin name, signature and description
