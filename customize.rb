@@ -82,7 +82,8 @@ sourceFileReplacements = [
 
 projectFileReplacements = [
     { pattern: originalClass[:header],       replacement: newClass[:header] },
-    { pattern: originalClass[:source],       replacement: newClass[:source] }
+    { pattern: originalClass[:source],       replacement: newClass[:source] },
+    { pattern: ORIGINAL_CLASS_NAME,          replacement: NEW_CLASS_NAME }
 ]
 
 # Replace contents of files
