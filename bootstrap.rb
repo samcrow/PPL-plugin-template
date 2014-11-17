@@ -114,3 +114,14 @@ replaceAll(originalClass[:source], sourceFileReplacements)
 FileUtils.move ORIGINAL_PROJECT_FILE, NEW_PROJECT_FILE
 FileUtils.move originalClass[:header], newClass[:header]
 FileUtils.move originalClass[:source], newClass[:source]
+
+# Remove git information
+FileUtils.remove_dir '.git'
+FileUtils.remove_dir 'plugin-interface/.git'
+
+# Initialize a new repository
+pid = Process.spawn('git', 'init')
+Process.detach pid
+
+# Remove this script
+FileUtils.remove __FILE__
