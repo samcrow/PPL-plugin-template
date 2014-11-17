@@ -6,9 +6,12 @@ require 'fileutils'
 
 Renames a plugin from the default name to a new name, for initial plugin setup
 
-Usage: customize.rb NewName
+Usage: customize.rb NewName [PluginName [PluginSignature [PluginDescription]]]
 Renames TemplatePlugin class to NewNamePlugin
 Renames Template.pro to NewName.pro
+PluginName is the name of the plugin, provided to X-Plane
+PluginSignature is the signature of the plugin, provided to X-Plane
+PluginDescription is the description of the plugin, provided to X-Plane
 
 =end
 
@@ -66,6 +69,12 @@ if ! NEW_PLUGIN_NAME
     exit -4
 end
 
+XPLANE_PLUGIN_DATA = {
+    name: ARGV[1],
+    signature: ARGV[2],
+    description: ARGV[3]
+}
+
 NEW_CLASS_NAME = NEW_PLUGIN_NAME + 'Plugin'
 
 ORIGINAL_PROJECT_FILE = ORIGINAL_PLUGIN_NAME + '.pro'
@@ -79,6 +88,16 @@ sourceFileReplacements = [
     { pattern: originalClass[:includeGuard], replacement: newClass[:includeGuard] },
     { pattern: originalClass[:header],       replacement: newClass[:header] }
 ]
+
+if XPLANE_PLUGIN_DATA[:name]
+    sourceFileReplacements << { pattern: '@name@', replacement: XPLANE_PLUGIN_DATA[:name] }
+end
+if XPLANE_PLUGIN_DATA[:signature]
+    sourceFileReplacements << { pattern: '@signature@', replacement: XPLANE_PLUGIN_DATA[:signature] }
+end
+if XPLANE_PLUGIN_DATA[:description]
+    sourceFileReplacements << { pattern: '@description@', replacement: XPLANE_PLUGIN_DATA[:description] }
+end
 
 projectFileReplacements = [
     { pattern: originalClass[:header],       replacement: newClass[:header] },
