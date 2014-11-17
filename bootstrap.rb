@@ -136,3 +136,7 @@ FileUtils.remove __FILE__
 # Keep .gitignore
 FileUtils.remove '.gitmodules'
 FileUtils.remove 'README.md'
+
+# Remove the Boost license file, because nothing in this directory
+# that is so licensed remains
+FileUtils.remove 'LICENSE_1_0.txt'
