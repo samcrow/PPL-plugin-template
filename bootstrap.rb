@@ -120,7 +120,7 @@ FileUtils.remove_dir '.git'
 FileUtils.remove_dir 'plugin-interface/.git'
 
 # Initialize a new repository
-pid = Process.spawn('git', 'init')
+pid = Process.spawn('git', 'init', :out => '/dev/null')
 Process.detach pid
 
 # Remove this script
