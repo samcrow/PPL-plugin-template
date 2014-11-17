@@ -16,7 +16,7 @@ Use the included script to set up the code with your plugin name, signature and 
 
 ## Licensing ##
 
-The licensing for this project is intended to provide ultimate freedom from restrictions on the files that remain after `bootstrap.sh` is executed.
+The licensing for this project is intended to provide ultimate freedom from restrictions on the files that remain after `bootstrap.rb` is executed.
 
 `bootstrap.rb` is licensed under the Boost software license.
 
