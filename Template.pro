@@ -1,4 +1,8 @@
-# Shared library without any Qt functionality
+
+# To the extent possible under law, the author has waived all
+# copyright and related or neighboring rights to this work.
+
+# Build a dynamic library without Qt
 TEMPLATE = lib
 QT -= gui core
 
@@ -18,35 +22,31 @@ DEFINES += PLUGIN_CLASS_NAME=TemplatePlugin
 # Specify the plugin header file name
 DEFINES += PLUGIN_HEADER_NAME=templateplugin.h
 
-# Defined to use X-Plane SDK 2.0 capabilities - no backward compatibility before 9.0
+# Use SDK 2.0: No backward compatibility before X-Plane 9.0
 DEFINES += XPLM200
-# Defined to use X-Plane SDK 2.1 capabilities - no backward compatibility before 10.0
+# Use SDK 2.1: No backward compatibility before X-Plane 10.0
 DEFINES += XPLM210
 
 win32 {
-        DEFINES += APL=0 IBM=1 LIN=0
-        LIBS += -L../SDK/Libraries/Win
-        LIBS += -lXPLM -lXPWidgets
-        TARGET = win.xpl
+    DEFINES += APL=0 IBM=1 LIN=0
+    LIBS += -L../SDK/Libraries/Win
+    LIBS += -lXPLM -lXPWidgets
+    TARGET = win.xpl
 }
 
 unix:!macx {
-        DEFINES += APL=0 IBM=0 LIN=1
-        TARGET = lin.xpl
-        # WARNING! This requires the latest version of the X-SDK !!!!
-        QMAKE_CXXFLAGS += -fvisibility=hidden
+    DEFINES += APL=0 IBM=0 LIN=1
+    TARGET = lin.xpl
+    QMAKE_CXXFLAGS += -fvisibility=hidden
 }
 
 macx {
-        DEFINES += APL=1 IBM=0 LIN=0
-        TARGET = mac.xpl
-        QMAKE_LFLAGS += -flat_namespace -undefined suppress
+    DEFINES += APL=1 IBM=0 LIN=0
+    TARGET = mac.xpl
+    QMAKE_LFLAGS += -flat_namespace -undefined suppress
 
-        # Build for multiple architectures.
-        # The following line is only needed to build universal on PPC architectures.
-        # QMAKE_MAC_SDK=/Developer/SDKs/MacOSX10.4u.sdk
-        # The following line defines for which architectures we build.
-        CONFIG += x86 # ppc
+    # Architectures to build
+    CONFIG += x86 # ppc
 
 	QMAKE_MAC_SDK = macosx
 }
