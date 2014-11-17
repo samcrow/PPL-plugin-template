@@ -14,9 +14,9 @@ INCLUDEPATH += ../SDK/CHeaders/Widgets
 
 # Specify the plugin class name
 # The plugin interface code uses this to initialize the correct plugin class.
-DEFINES += PLUGIN_CLASS_NAME=ExamplePlugin
+DEFINES += PLUGIN_CLASS_NAME=TemplatePlugin
 # Specify the plugin header file name
-DEFINES += PLUGIN_HEADER_NAME=exampleplugin.h
+DEFINES += PLUGIN_HEADER_NAME=templateplugin.h
 
 # Defined to use X-Plane SDK 2.0 capabilities - no backward compatibility before 9.0
 DEFINES += XPLM200
@@ -54,9 +54,8 @@ macx {
 SOURCES += \
     plugin-interface/plugin.cpp \
     plugin-interface/plugin_main.cpp \
-    exampleplugin.cpp
+    templateplugin.cpp
 
 HEADERS += \
     plugin-interface/plugin.h \
-    exampleplugin.h
-
+    templateplugin.h
