@@ -1,6 +1,6 @@
-# Plugin interface example #
+# Plugin Template #
 
-This is a simple example plugin that uses the plugin-interface code.
+A template for X-Plane plugins, using [plugin-interface](https://github.com/samcrow/plugin-interface), with a script for automatic project configuration
 
 ## To use ##
 
