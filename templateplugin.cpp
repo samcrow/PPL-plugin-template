@@ -1,7 +1,7 @@
 #include "templateplugin.h"
 
 TemplatePlugin::TemplatePlugin() :
-    Plugin("Template plugin", "org.samcrow.template", "Plugin template")
+    Plugin("@name@", "@signature@", "@description@")
 {
 
 }
@@ -19,5 +19,5 @@ void TemplatePlugin::onDisable()
 
 void TemplatePlugin::onEnable()
 {
-    
+
 }
