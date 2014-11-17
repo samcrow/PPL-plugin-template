@@ -125,3 +125,8 @@ Process.detach pid
 
 # Remove this script
 FileUtils.remove __FILE__
+
+# Remove other things from the original template project
+# Keep .gitignore
+FileUtils.remove '.gitmodules'
+FileUtils.remove 'README.md'
