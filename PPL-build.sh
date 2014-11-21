@@ -18,7 +18,7 @@ CONFIG=''
 $CONFIG+=' CONFIG+=debug'
 
 # qmake
-qmake ../PPL/PPL.pro PRIVATENAMESPACE=ExamplePlugin $CONFIG INCLUDEPATH+=../../SDK/CHeaders/XPLM INCLUDEPATH+=../../SDK/CHeaders/Widgets INCLUDEPATH+=../../SDK/CHeaders/Wrappers
+qmake ../PPL/PPL.pro PRIVATENAMESPACE=Example $CONFIG INCLUDEPATH+=../../SDK/CHeaders/XPLM INCLUDEPATH+=../../SDK/CHeaders/Widgets INCLUDEPATH+=../../SDK/CHeaders/Wrappers
 
 make
 

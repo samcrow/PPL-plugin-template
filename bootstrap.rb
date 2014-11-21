@@ -68,6 +68,7 @@ end
 
 ORIGINAL_PLUGIN_NAME = 'Template'
 ORIGINAL_CLASS_NAME = ORIGINAL_PLUGIN_NAME + 'Plugin'
+PPL_BUILD_SCRIPT_FILE = 'PPL-build.sh'
 
 NEW_PLUGIN_NAME = ARGV[0]
 if ! NEW_PLUGIN_NAME
@@ -115,6 +116,9 @@ projectFileReplacements = [
 replaceAll(ORIGINAL_PROJECT_FILE, projectFileReplacements)
 replaceAll(originalClass[:header], sourceFileReplacements)
 replaceAll(originalClass[:source], sourceFileReplacements)
+
+# Edit PPL build script to set the correct private namespace
+replaceAll(PPL_BUILD_SCRIPT_FILE, ORIGINAL_PLUGIN_NAME, NEW_PLUGIN_NAME)
 
 # Rename files
 FileUtils.move ORIGINAL_PROJECT_FILE, NEW_PROJECT_FILE
