@@ -6,7 +6,7 @@
 TEMPLATE = lib
 QT -= gui core
 
-CONFIG += warn_on plugin debug c++11
+CONFIG += warn_on plugin c++11
 CONFIG -= thread exceptions qt rtti
 
 VERSION = 1.0.0
@@ -26,6 +26,23 @@ DEFINES += PLUGIN_HEADER_NAME=templateplugin.h
 DEFINES += XPLM200
 # Use SDK 2.1: No backward compatibility before X-Plane 10.0
 DEFINES += XPLM210
+
+# Include PPL
+
+PRIVATENAMESPACE = TemplatePlugin
+# Add any optional PPL components that this plugin requires.
+# These must match the configuration that PPL was compiled with.
+# When these are changed, you must also change them in PPL-build.sh.
+
+# Uncomment to enable PNG image reading
+#CONFIG += withpng
+# Uncomment to enable OpenGL text rendering
+#CONFIG += withfreetype
+
+include(PPL/ppl.pri)
+
+
+# Platform-specific configuration
 
 win32 {
     DEFINES += APL=0 IBM=1 LIN=0
