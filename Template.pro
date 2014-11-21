@@ -29,7 +29,7 @@ DEFINES += XPLM210
 
 # Include PPL
 
-PRIVATENAMESPACE = TemplatePlugin
+PRIVATENAMESPACE = Template
 # Add any optional PPL components that this plugin requires.
 # These must match the configuration that PPL was compiled with.
 # When these are changed, you must also change them in PPL-build.sh.
