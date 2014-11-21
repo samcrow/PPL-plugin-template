@@ -118,7 +118,7 @@ replaceAll(originalClass[:header], sourceFileReplacements)
 replaceAll(originalClass[:source], sourceFileReplacements)
 
 # Edit PPL build script to set the correct private namespace
-replaceAll(PPL_BUILD_SCRIPT_FILE, ORIGINAL_PLUGIN_NAME, NEW_PLUGIN_NAME)
+replaceAll(PPL_BUILD_SCRIPT_FILE, { pattern: ORIGINAL_PLUGIN_NAME, replacement: NEW_PLUGIN_NAME })
 
 # Rename files
 FileUtils.move ORIGINAL_PROJECT_FILE, NEW_PROJECT_FILE
