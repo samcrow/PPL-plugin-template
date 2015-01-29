@@ -6,7 +6,7 @@ A template for X-Plane plugins, using [plugin-interface](https://github.com/samc
 
 Clone the project recursively to include the plugin-interface code
 
-	$ git clone --recursive https://github.com/samcrow/plugin-template.git YourPluginName
+	$ git clone --recursive https://github.com/samcrow/PPL-plugin-template.git YourPluginName
 	$ cd YourPluginName
 
 Use the included script to set up the code with your plugin name, signature and description
